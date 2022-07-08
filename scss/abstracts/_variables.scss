@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
 
 // ==========================================================================
 // z-index
@@ -40,7 +40,7 @@ $primary-fallback-font: sans-serif;
 //
 // sets
 // --------------------------------------------------------------------------
-$primary-font: "Manrope", $primary-fallback-font;
+$primary-font: "League Spartan", $primary-fallback-font;
 
 //
 // weights
@@ -60,7 +60,7 @@ $fw-900: 900;
 // --------------------------------------------------------------------------
 $fs-100: 0.7rem;
 $fs-200: 0.83rem;
-$fs-300: 0.9rem;
+$fs-300: 0.9375rem;
 $fs-400: 1rem;
 $fs-500: 1.2rem;
 $fs-600: 1.5rem;
