@@ -1,0 +1,10 @@
+.attribution {
+  &__note {
+    font: {
+      size: #{var(--note-fs)};
+    }
+    line: {
+      height: #{var(--note-lh)};
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@use "../../scss/themes" as ts;
+@use "../abstracts" as as;
+
+/* typography */
+// ==========================================================================
+// body
+// ==========================================================================
+body {
+  font: {
+    family: as.$vs-primary-font;
+    weight: as.$vs-fw-400;
+  }
+}
+
+.attribution {
+  --link-clr: #{ts.$te-attr__link_clr};
+  --link_hov-clr: #{ts.$te-attr__link_hov-clr};
+  --note-fs: #{as.$vs-fs-300};
+  --note-lh: #{as.$vs-lh-600};
+
+  color: ts.$te-attr_clr;
+  text: {
+    align: center;
+  }
+}

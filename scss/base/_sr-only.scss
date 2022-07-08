@@ -1,0 +1,8 @@
+@use "../abstracts" as as;
+
+/* sr-only */
+.sr {
+  &-only {
+    @include as.ms-sr-only;
+  }
+}
