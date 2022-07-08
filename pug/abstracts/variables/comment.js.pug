@@ -1,0 +1,22 @@
+include ../functions.js.pug
+
+-
+  const comment = {
+    getComponent: () => {
+      return createComponentClasses(
+        'comment',
+        ['about-author', 'img', 'name', 'status', 'desc']
+      );
+    },
+    modOn: function(modName, block, elName) {
+      if (!modName) { return };
+
+      if (block) {
+        return this.getComponent().name + this.getComponent().mods[modName];
+      } else {
+        return this.getComponent().el[elName] + this.getComponent().mods[modName];
+      }
+
+      return this.getComponent().mods[modName];
+    }
+  };

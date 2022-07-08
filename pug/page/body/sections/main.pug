@@ -1,1 +1,5 @@
-main
+include ../../../abstracts/variables/main.js.pug
+
+main(class=`${main.getComponent().name} ${main.getComponent().el.comments}`)
+  include ../../../../common-blocks/about-company/about-company.pug
+  include ../../../../common-blocks/comment/comment.pug

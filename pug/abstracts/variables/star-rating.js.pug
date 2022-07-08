@@ -1,0 +1,22 @@
+include ../functions.js.pug
+
+-
+  const starRating = {
+    getComponent: () => {
+      return createComponentClasses(
+        'star-rating',
+        ['stars', 'star', 'title']
+      );
+    },
+    modOn: function(modName, block, elName) {
+      if (!modName) { return };
+
+      if (block) {
+        return this.getComponent().name + this.getComponent().mods[modName];
+      } else {
+        return this.getComponent().el[elName] + this.getComponent().mods[modName];
+      }
+
+      return this.getComponent().mods[modName];
+    }
+  };

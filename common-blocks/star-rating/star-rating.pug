@@ -1,0 +1,37 @@
+include ../../pug/abstracts/variables/star-rating.js.pug
+
+-
+  const reviews = {
+    rates: [
+      {
+        starsNumber: 5,
+        author: "Reviews"
+      },
+      {
+        starsNumber: 5,
+        author: "Report Guru"
+      },
+      {
+        starsNumber: 5,
+        author: "BestTech"
+      },
+    ],
+    getTitle: function(nbr, title) {
+      return `Rated ${nbr} in ${title}`;
+    }
+  };
+
+each rate, key in reviews.rates
+  div(class=starRating.getComponent().name)
+    div(class=starRating.getComponent().el.stars)
+
+      - let i = reviews.rates[key].starsNumber;
+      while (i > 0)
+
+        div(class=starRating.getComponent().el.star)
+          img(src="images/icon-star.svg" alt="" width="17" height="16")
+          - i--;
+
+    - let n = reviews.rates[key].starsNumber;
+    - let t = reviews.rates[key].author;
+    p(class=starRating.getComponent().el.title)= reviews.getTitle(n, t)

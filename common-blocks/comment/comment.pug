@@ -1,0 +1,50 @@
+include ../../pug/abstracts/variables/comment.js.pug
+
+-
+  const statuses = {
+    verified: "Verified Buyer",
+    getStatus: function(status) {
+      if (status) { return this.verified };
+    }
+  }
+
+-
+  const comments = [
+    {
+      author: {
+        img: "images/image-colton.jpg",
+        name: "Colton Smith",
+        status: ""
+      },
+      desc: "We needed the same printed design as the one we had ordered a week prior. Not only did they find the original order, but we also received it in time. Excellent!"
+    },
+    {
+      author: {
+        img: "images/image-irene.jpg",
+        name: "Irene Roberts",
+        status: ""
+      },
+      desc: "Customer service is always excellent and very quick turn around. Completely delighted with the simplicity of the purchase and the speed of delivery."
+    },
+    {
+      author: {
+        img: "images/image-anne.jpg",
+        name: "Anne Wallace",
+        status: ""
+      },
+      desc: "Put an order with this company and can only praise them for the very high standard. Will definitely use them again and recommend them to everyone!"
+    },
+  ];
+
+each com, key in comments
+  article(class=comment.getComponent().name)
+    div(class=comment.getComponent().el.aboutAuthor)
+      div(class=comment.getComponent().el.img)
+        img(src=comments[key].author.img alt="")
+      p(class=comment.getComponent().el.name)= comments[key].author.name
+
+      - comments[key].author.status = statuses.getStatus(true);
+
+        span(class=comment.getComponent().el.status)= comments[key].author.status
+    p(class=comment.getComponent().el.desc)
+      q= comments[key].desc

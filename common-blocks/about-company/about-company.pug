@@ -1,0 +1,8 @@
+include ../../pug/abstracts/variables/about-company.js.pug
+
+div(class=aboutCompany.getComponent().name)
+  div(class=aboutCompany.getComponent().el.textContent)
+    h1(class=aboutCompany.getComponent().el.title) 10,000 + of our users love our products.
+    p(class=aboutCompany.getComponent().el.desc) We only provide great products combined with excellent customer service. See what our satisfied customers are saying about our services.
+  div(class=aboutCompany.getComponent().el.rating)
+    include ../star-rating/star-rating.pug
