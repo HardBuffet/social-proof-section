@@ -1,0 +1,9 @@
+@use "../../../scss/abstracts" as as;
+
+.bg-pattern {
+  &__top {
+    @include as.ms-pos($topLeft: true);
+
+    width: #{var(--__top-and-bottom_width)};
+  }
+}

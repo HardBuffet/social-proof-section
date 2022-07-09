@@ -1,5 +1,3 @@
-
-
 // ==========================================================================
 // palette
 // ==========================================================================
@@ -30,9 +28,29 @@ $body_clr: $black-400;
 // components
 // ==========================================================================
 //
+// about-company
+// --------------------------------------------------------------------------
+$about-company__title_clr: $magenta-200;
+$about-company__desc_clr: $magenta-500;
+
+//
+// star-rating
+// --------------------------------------------------------------------------
+$star-rating_bg-clr: $magenta-900;
+$star-rating__title_clr: $magenta-200;
+
+//
+// comment
+// --------------------------------------------------------------------------
+$comment_bg-clr: $magenta-200;
+$comment_clr: $magenta-900;
+$comment__status_clr: $pink-400;
+$comment__name: $white-400;
+
+//
 // attribution
 // --------------------------------------------------------------------------
 $attr_bg-clr: $black-400;
 $attr_clr: $white-400;
-$attr__link_clr: $white-400;
-$attr__link_hov-clr: $white-400;
+$attr__link_clr: $magenta-500;
+$attr__link_hov-clr: $pink-400;

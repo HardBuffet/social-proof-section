@@ -1,0 +1,10 @@
+@use "../../../scss/abstracts" as as;
+
+.about-company {
+  &__rating {
+    @include as.ms-flex($dir: true);
+
+    width: 100%;
+    gap: #{var(--__rating_gap)};
+  }
+}

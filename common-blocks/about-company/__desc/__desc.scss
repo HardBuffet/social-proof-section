@@ -1,0 +1,10 @@
+.about-company {
+  &__desc {
+    margin: auto;
+    max: {
+      inline: {
+        size: #{var(--__desc_max-in-size)};
+      }
+    }
+  }
+}

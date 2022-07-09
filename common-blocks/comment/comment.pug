@@ -9,7 +9,7 @@ include ../../pug/abstracts/variables/comment.js.pug
   }
 
 -
-  const comments = [
+  const usersComments = [
     {
       author: {
         img: "images/image-colton.jpg",
@@ -36,15 +36,13 @@ include ../../pug/abstracts/variables/comment.js.pug
     },
   ];
 
-each com, key in comments
+each com, key in usersComments
   article(class=comment.getComponent().name)
     div(class=comment.getComponent().el.aboutAuthor)
       div(class=comment.getComponent().el.img)
-        img(src=comments[key].author.img alt="")
-      p(class=comment.getComponent().el.name)= comments[key].author.name
-
-      - comments[key].author.status = statuses.getStatus(true);
-
-        span(class=comment.getComponent().el.status)= comments[key].author.status
+        img(src=usersComments[key].author.img alt="")
+      p(class=comment.getComponent().el.name)= usersComments[key].author.name
+        - usersComments[key].author.status = statuses.getStatus(true);
+        span(class=comment.getComponent().el.status)= usersComments[key].author.status
     p(class=comment.getComponent().el.desc)
-      q= comments[key].desc
+      q= usersComments[key].desc

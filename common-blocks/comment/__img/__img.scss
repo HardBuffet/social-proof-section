@@ -1,0 +1,5 @@
+.comment {
+  &__img {
+    width: #{var(--__img_width)};
+  }
+}

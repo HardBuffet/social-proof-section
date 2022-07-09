@@ -1,0 +1,15 @@
+@use "../../scss/abstracts" as as;
+
+/* about-company */
+.about-company {
+  --__rating_gap: #{as.$vs-gap-500};
+  --__text-content_gap: #{as.$vs-gap-800};
+  --__desc_max-in-size: #{calc(100% - 5px)};
+
+  @include as.ms-flex($dir: true, $ai: true);
+
+  gap: as.$vs-gap-900;
+  margin: {
+    inline: #{var(--about-company_mar-i)}
+  }
+}

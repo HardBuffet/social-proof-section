@@ -1,0 +1,9 @@
+@use "../../../scss/abstracts" as as;
+
+.about-company {
+  &__text-content {
+    @include as.ms-flex($dir: true);
+
+    gap: #{var(--__text-content_gap)};
+  }
+}

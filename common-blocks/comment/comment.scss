@@ -1,0 +1,44 @@
+@use "../../scss/abstracts" as as;
+@use "../../scss/themes" as ts;
+
+/* comment */
+.comment {
+  --__img_width: 47px;
+  --__about-author_gap: #{as.$vs-gap-650};
+  --__name_gap: #{as.$vs-gap-100};
+
+  @include as.ms-flex($dir: true);
+
+  gap: as.$vs-gap-750;
+  padding: as.$vs-pad-800;
+  background: {
+    color: ts.$te-comment_bg-clr;
+  }
+  border: {
+    radius: as.$vs-br-100;
+  }
+
+  img {
+    border: {
+      radius: 100vw;
+    }
+  }
+
+  q {
+    &::before {
+      margin: {
+        inline: {
+          end: as.$vs-mar-i-100;
+        }
+      }
+    }
+
+    &::after {
+      margin: {
+        inline: {
+          start: as.$vs-mar-i-100;
+        }
+      }
+    }
+  }
+}

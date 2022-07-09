@@ -1,0 +1,14 @@
+@use "../../scss/abstracts" as as;
+
+/* bg-pattern */
+.bg-pattern {
+  --__top-and-bottom_width: 100%;
+
+  @include as.ms-pos($topLeft: true);
+
+  z-index: as.$vs-min-zx-700;
+  width: 100%;
+  min: {
+    height: 100vh;
+  }
+}

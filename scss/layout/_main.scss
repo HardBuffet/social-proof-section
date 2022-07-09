@@ -1,0 +1,19 @@
+@use "../abstracts" as as;
+
+/* main */
+.main {
+  --about-company_mar-i: #{as.$vs-mar-i-500};
+  --comments_mar-i: #{as.$vs-mar-i-500};
+
+  @include as.ms-flex($dir: true);
+  gap: as.$vs-gap-900;
+
+  // margin is here for separate actual content from footer
+  // (which i positioned with 'position: fixed')
+  margin: {
+    bottom: 150px;
+  }
+  padding: {
+    top: as.$vs-pad-950;
+  }
+}

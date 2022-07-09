@@ -1,0 +1,9 @@
+@use "../../../scss/abstracts" as as;
+
+.comment {
+  &__about-author {
+    @include as.ms-flex($ai: true);
+
+    gap: #{var(--__about-author_gap)};
+  }
+}

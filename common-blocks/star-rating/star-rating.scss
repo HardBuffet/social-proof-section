@@ -1,0 +1,16 @@
+@use "../../scss/abstracts" as as;
+@use "../../scss/themes" as ts;
+
+/* star-rating */
+.star-rating {
+  --__stars_gap: #{as.$vs-gap-250};
+
+  @include as.ms-flex($dir: true, $ai: true);
+
+  border-radius: as.$vs-br-100;
+  padding: as.$vs-pad-400;
+  gap: as.$vs-gap-100;
+  background: {
+    color: ts.$te-star-rating_bg-clr;
+  }
+}

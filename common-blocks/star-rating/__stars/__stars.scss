@@ -1,0 +1,9 @@
+@use "../../../scss/abstracts" as as;
+
+.star-rating {
+  &__stars {
+    @include as.ms-flex;
+
+    gap: #{var(--__stars_gap)};
+  }
+}

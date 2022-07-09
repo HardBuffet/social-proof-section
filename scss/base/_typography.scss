@@ -6,6 +6,7 @@
 // body
 // ==========================================================================
 body {
+  color: ts.$te-body_clr;
   font: {
     size: as.$vs-fs-300;
     family: as.$vs-primary-font;
@@ -13,14 +14,96 @@ body {
   }
 }
 
-.attribution {
-  --link-clr: #{ts.$te-attr__link_clr};
-  --link_hov-clr: #{ts.$te-attr__link_hov-clr};
-  --note-fs: #{as.$vs-fs-300};
-  --note-lh: #{as.$vs-lh-600};
+.about-company {
+  &__text-content {
+    text: {
+      align: center;
+    }
+  }
 
+  &__title {
+    color: ts.$te-about-company__title_clr;
+    font: {
+      size: as.$vs-fs-800;
+      weight: as.$vs-fw-700;
+    }
+  }
+
+  &__desc {
+    color: ts.$te-about-company__desc_clr;
+    font: {
+      weight: as.$vs-fw-400;
+      size: as.$vs-fs-450;
+    }
+    line: {
+      height: as.$vs-lh-600;
+    }
+  }
+}
+
+.star-rating {
+  &__title {
+    color: ts.$te-star-rating__title_clr;
+    line: {
+      height: as.$vs-lh-700;
+    }
+    font: {
+      weight: as.$vs-fw-700;
+    }
+    letter: {
+      spacing: as.$vs-ls-100;
+    }
+  }
+}
+
+.comment {
+  color: ts.$te-comment_clr;
+
+  &__name {
+    color: ts.$te-comment__name;
+    font: {
+      weight: as.$vs-fw-700;
+    }
+  }
+
+  &__desc {
+    font: {
+      size: as.$vs-fs-400;
+      weight: as.$vs-fw-500;
+    }
+    line: {
+      height: as.$vs-lh-600;
+    }
+  }
+
+  &__status {
+    color: ts.$te-comment__status_clr;
+    font: {
+      weight: as.$vs-fw-400;
+    }
+  }
+}
+
+.attribution {
   color: ts.$te-attr_clr;
   text: {
     align: center;
+  }
+
+  &__note {
+    font: {
+      size: as.$vs-fs-300;
+    }
+    line: {
+      height: as.$vs-lh-600;
+    }
+  }
+
+  &__link {
+    color: ts.$te-attr__link_clr;
+
+    &:hover {
+      color: ts.$te-attr__link_hov-clr;
+    }
   }
 }

@@ -1,0 +1,9 @@
+@use "../../../scss/abstracts" as as;
+
+.comment {
+  &__name {
+    @include as.ms-flex($dir: true);
+
+    gap: #{var(--__name_gap)};
+  }
+}
