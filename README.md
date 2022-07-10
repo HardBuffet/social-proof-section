@@ -26,8 +26,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/type-name-here)
-- Live Site URL: [Add live site URL here](https://hardbuffet.github.io/type-name-here/)
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/social-proof-section-hub-NL5GOSX9Pm)
+- Live Site URL: [GitHub Pages](https://hardbuffet.github.io/social-proof-section/)
 
 ## My process
 
