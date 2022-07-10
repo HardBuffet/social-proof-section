@@ -126,11 +126,11 @@
     align: {
       items: $aiVal;
     }
+  }
 
-    @if $jc {
-      justify: {
-        content: $jcVal;
-      }
+  @if $jc {
+    justify: {
+      content: $jcVal;
     }
   }
 }

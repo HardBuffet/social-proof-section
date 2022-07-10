@@ -2,14 +2,37 @@
 
 /* about-company */
 .about-company {
+  //
+  // __rating
+  // --------------------------------------------------------------------------
   --__rating_gap: #{as.$vs-gap-500};
+  --__rating_width: 100%;
+
+  //
+  // __text-content
+  // --------------------------------------------------------------------------
   --__text-content_gap: #{as.$vs-gap-800};
-  --__desc_max-in-size: #{calc(100% - 5px)};
+  --__text-content__max-i-size: 28em;
 
   @include as.ms-flex($dir: true, $ai: true);
 
-  gap: as.$vs-gap-900;
+  gap: as.$vs-gap-850;
   margin: {
-    inline: #{var(--about-company_mar-i)}
+    inline: #{var(--about-company_mar-i)};
+  }
+
+  @include as.ms-respond-to("medium") {
+    align: {
+      items: start;
+    }
+  }
+
+  @include as.ms-respond-to("huge") {
+    flex: {
+      direction: row;
+    }
+    justify: {
+      content: space-between;
+    }
   }
 }

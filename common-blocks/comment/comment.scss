@@ -3,14 +3,38 @@
 
 /* comment */
 .comment {
+  --gap: #{as.$vs-gap-750};
+  --pad: #{as.$vs-pad-b-750 as.$vs-pad-i-800};
+  --max-w: 22.3em;
+  --trf-m: scale(0.9);
+
+  // set margin-top (starting from el[0] or not),
+  // increase mar-top by 2em on each element based on previous one
+  $mar-step: as.$vs-mar-700;
+  $mar-from-first-el: false;
+
+  //
+  // img
+  // --------------------------------------------------------------------------
   --__img_width: 47px;
+  --__img_border-r: 100vw;
+
+  //
+  // about-author
+  // --------------------------------------------------------------------------
   --__about-author_gap: #{as.$vs-gap-650};
-  --__name_gap: #{as.$vs-gap-100};
+
+  //
+  // name
+  // --------------------------------------------------------------------------
+  --__name_gap: #{as.$vs-gap-150};
 
   @include as.ms-flex($dir: true);
-
-  gap: as.$vs-gap-750;
-  padding: as.$vs-pad-800;
+  gap: #{var(--gap)};
+  padding: #{var(--pad)};
+  max: {
+    width: #{var(--max-w)};
+  }
   background: {
     color: ts.$te-comment_bg-clr;
   }
@@ -18,27 +42,53 @@
     radius: as.$vs-br-100;
   }
 
-  img {
-    border: {
-      radius: 100vw;
+  @for $i from 1 through 3 {
+    &:nth-child(#{$i}) {
+      @if $i == 1 {
+        align: {
+          self: start;
+        }
+      }
+
+      @if $i == 2 {
+        align: {
+          self: center;
+        }
+      }
+
+      @if $i == 3 {
+        align: {
+          self: end;
+        }
+      }
+
+      @include as.ms-respond-to("almost-huge") {
+        @if $mar-from-first-el {
+          margin: {
+            top: $i * $mar-step;
+          }
+        } @else {
+          margin: {
+            // for example:
+            //-- 1 + 1 - 2 = 0
+            //-- 2 + 2 - 2 = 2
+            //-- 3 + 3 - 2 = 4 etc.
+            top: $i + $i - $mar-step;
+          }
+        }
+      }
     }
   }
 
-  q {
-    &::before {
-      margin: {
-        inline: {
-          end: as.$vs-mar-i-100;
-        }
-      }
+  @include as.ms-respond-to("almost-huge") {
+    transform: #{var(--trf-m)};
+    height: max-content;
+    align: {
+      self: initial;
     }
+  }
 
-    &::after {
-      margin: {
-        inline: {
-          start: as.$vs-mar-i-100;
-        }
-      }
-    }
+  @include as.ms-respond-to("huge") {
+    --trf-m: scale(1);
   }
 }

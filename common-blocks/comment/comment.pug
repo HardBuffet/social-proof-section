@@ -41,7 +41,7 @@ each com, key in usersComments
     div(class=comment.getComponent().el.aboutAuthor)
       div(class=comment.getComponent().el.img)
         img(src=usersComments[key].author.img alt="")
-      p(class=comment.getComponent().el.name)= usersComments[key].author.name
+      h3(class=comment.getComponent().el.name)= usersComments[key].author.name
         - usersComments[key].author.status = statuses.getStatus(true);
         span(class=comment.getComponent().el.status)= usersComments[key].author.status
     p(class=comment.getComponent().el.desc)

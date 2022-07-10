@@ -2,13 +2,36 @@
 
 /* bg-pattern */
 .bg-pattern {
-  --__top-and-bottom_width: 100%;
+  --max-size: 100%;
+
+  //
+  // __top
+  // --------------------------------------------------------------------------
+  --__top_width: 100%;
+
+  //
+  // __bottom
+  // --------------------------------------------------------------------------
+  --__bottom_width: 100%;
 
   @include as.ms-pos($topLeft: true);
 
   z-index: as.$vs-min-zx-700;
-  width: 100%;
-  min: {
-    height: 100vh;
+  width: #{var(--max-size)};
+  height: #{var(--max-size)};
+
+  @include as.ms-respond-to("medium") {
+    --__top_width: 66%;
+    --__bottom_width: 140%;
+  }
+
+  @include as.ms-respond-to("almost-huge") {
+    --__top_width: 80%;
+    --__bottom_width: 90%;
+  }
+
+  @include as.ms-respond-to("huge") {
+    --__top_width: 50%;
+    --__bottom_width: 100%;
   }
 }

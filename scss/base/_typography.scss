@@ -19,12 +19,19 @@ body {
     text: {
       align: center;
     }
+
+    @include as.ms-respond-to("medium") {
+      text: {
+        align: left;
+      }
+    }
   }
 
   &__title {
     color: ts.$te-about-company__title_clr;
     font: {
       size: as.$vs-fs-800;
+      size: clamp(2.5rem, 1.618rem + 3.765vw, 3.5rem);
       weight: as.$vs-fw-700;
     }
   }
@@ -32,11 +39,11 @@ body {
   &__desc {
     color: ts.$te-about-company__desc_clr;
     font: {
-      weight: as.$vs-fw-400;
+      weight: as.$vs-fw-500;
       size: as.$vs-fs-450;
     }
     line: {
-      height: as.$vs-lh-600;
+      height: as.$vs-lh-650;
     }
   }
 }
@@ -44,10 +51,8 @@ body {
 .star-rating {
   &__title {
     color: ts.$te-star-rating__title_clr;
-    line: {
-      height: as.$vs-lh-700;
-    }
     font: {
+      size: as.$vs-fs-400;
       weight: as.$vs-fw-700;
     }
     letter: {
@@ -62,6 +67,7 @@ body {
   &__name {
     color: ts.$te-comment__name;
     font: {
+      size: as.$vs-fs-400;
       weight: as.$vs-fw-700;
     }
   }

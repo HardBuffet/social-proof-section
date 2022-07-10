@@ -2,18 +2,42 @@
 
 /* main */
 .main {
-  --about-company_mar-i: #{as.$vs-mar-i-500};
-  --comments_mar-i: #{as.$vs-mar-i-500};
+  --gap: #{as.$vs-gap-875};
+  --pad-b: #{as.$vs-pad-950};
+  --children_eq-mar: #{as.$vs-mar-i-500};
 
-  @include as.ms-flex($dir: true);
-  gap: as.$vs-gap-900;
+  //
+  // about-company
+  // --------------------------------------------------------------------------
+  --about-company_mar-i: #{var(--children_eq-mar)};
 
-  // margin is here for separate actual content from footer
-  // (which i positioned with 'position: fixed')
-  margin: {
-    bottom: 150px;
-  }
+  //
+  // comments
+  // --------------------------------------------------------------------------
+  --comments_mar-i: #{var(--children_eq-mar)};
+
+  @include as.ms-flex($dir: true, $jc: true);
+  gap: #{var(--gap)};
+
+  // I have only 1530px of height to put all elements inside a page
+  // and do not cut the footer from the screenshot.
+  // By that the 'padding-top' property is necessary for small devices.
   padding: {
-    top: as.$vs-pad-950;
+    block: {
+      start: #{var(--pad-b)};
+    }
+  }
+
+  @include as.ms-respond-to("medium") {
+    --about-company_mar-i: clamp(1.5rem, -9.125rem + 21.25vw, 10rem);
+
+    padding: {
+      block: #{var(--pad-b)};
+    }
+  }
+
+  @include as.ms-respond-to("huge") {
+    --children_eq-mar: #{as.$vs-mar-i-999};
+    --gap: #{as.$vs-gap-950};
   }
 }

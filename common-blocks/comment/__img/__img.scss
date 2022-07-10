@@ -1,5 +1,11 @@
 .comment {
   &__img {
     width: #{var(--__img_width)};
+
+    > img {
+      border: {
+        radius: #{var(--__img_border-r)};
+      }
+    }
   }
 }

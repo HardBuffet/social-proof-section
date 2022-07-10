@@ -4,6 +4,6 @@
   &__bottom {
     @include as.ms-pos($bottomRight: true);
 
-    width: #{var(--__top-and-bottom_width)};
+    width: #{var(--__bottom_width)};
   }
 }

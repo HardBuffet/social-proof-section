@@ -5,5 +5,10 @@
     @include as.ms-flex($dir: true);
 
     gap: #{var(--__text-content_gap)};
+    max: {
+      inline: {
+        size: #{var(--__text-content__max-i-size)};
+      }
+    }
   }
 }

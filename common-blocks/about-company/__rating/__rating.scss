@@ -4,7 +4,7 @@
   &__rating {
     @include as.ms-flex($dir: true);
 
-    width: 100%;
+    width: #{var(--__rating_width)};
     gap: #{var(--__rating_gap)};
   }
 }

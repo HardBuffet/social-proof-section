@@ -3,14 +3,65 @@
 
 /* star-rating */
 .star-rating {
+  --edges_mar-i: clamp(0rem, -14.1rem + 60.23vw, 16rem);
+  --middle_mar-i: calc(#{var(--edges_mar-i)} / 2);
+  --max-width: 22em;
+
+  //
+  // __stars
+  // --------------------------------------------------------------------------
   --__stars_gap: #{as.$vs-gap-250};
 
   @include as.ms-flex($dir: true, $ai: true);
 
-  border-radius: as.$vs-br-100;
-  padding: as.$vs-pad-400;
-  gap: as.$vs-gap-100;
+  padding: as.$vs-pad-500;
+  gap: as.$vs-gap-450;
+  width: 100%;
+  border: {
+    radius: as.$vs-br-100;
+  }
+  max: {
+    width: #{var(--max-width)};
+  }
+  align: {
+    self: end;
+  }
   background: {
     color: ts.$te-star-rating_bg-clr;
+  }
+
+  @for $i from 1 through 3 {
+    &:nth-child(#{$i}) {
+      @if $i == 1 {
+        margin: {
+          right: #{var(--edges_mar-i)};
+        }
+      }
+
+      @if $i == 2 {
+        margin: {
+          inline: #{var(--middle_mar-i)};
+        }
+      }
+
+      @if $i == 3 {
+        margin: {
+          left: #{var(--edges_mar-i)};
+        }
+      }
+    }
+  }
+
+  @include as.ms-respond-to("huge") {
+    --edges_mar-i: 7em;
+    --max-width: 29em;
+
+    gap: as.$vs-gap-850;
+    flex: {
+      direction: row;
+    }
+    padding: {
+      inline: as.$vs-pad-i-600;
+    }
   }
 }

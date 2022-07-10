@@ -1,10 +1,24 @@
 @use "../../scss/abstracts" as as;
 
 .comments {
-  @include as.ms-flex($dir: true);
+  --gap: #{as.$vs-gap-500};
 
-  gap: as.$vs-gap-500;
+  @include as.ms-flex($dir: true, $jc: true);
+
+  gap: #{var(--gap)};
   margin: {
     inline: #{var(--comments_mar-i)};
+  }
+
+  @include as.ms-respond-to("almost-huge") {
+    --gap: 0;
+
+    flex: {
+      direction: row;
+    }
+  }
+
+  @include as.ms-respond-to("huge") {
+    --gap: #{as.$vs-gap-800};
   }
 }
